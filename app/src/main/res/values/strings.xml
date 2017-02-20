@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ServerBus</string>
+    <string name="menu_ajustes">Ajustes</string>
+    <string name="preferencias_titulo_servidor">Configuración del servidor</string>
+    <string name="key_ip_servidor" translatable="false">prefs_ip_servidor</string>
+    <string name="descripcion_ip_servidor">Introduce la ip del servidor Rest.</string>
+    <string name="titulo_ip_servidor">IP Servidor REST</string>
+    <string name="preferencias_acerca_de">Acerca de</string>
+    <string name="descripcion_acerca_de">Diseño y código por Joan Creus Martin.</string>
+    <string name="titulo_acerca_de">Información</string>
+    <string name="hint_ip">Ej. 192.168.1.12</string>
+    <string name="activity_configuracion_nombre">Configuración</string>
+    <string name="title_activity_maps">Mapa autobuses</string>
+    <string name="info_ultima_localizacion">Última localización</string>
+    <string name="menu_refrescar">Refrescar</string>
+    <string name="toast_no_hay_resultados">No hay resultados.</string>
+    <string name="info_graciosa_sincronizar">Espera que termine de sincronizar, no intentes colapsar la app, no lo conseguirás. :)</string>
+    <string name="matricula">Matricula</string>
+    <string name="title_activity_maps_por_matricula">Map</string>
+</resources>
