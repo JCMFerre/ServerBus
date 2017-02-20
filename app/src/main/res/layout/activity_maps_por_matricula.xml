@@ -27,11 +27,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/layout_con_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:visibility="gone">
 
         <Spinner
             android:id="@+id/spinner_sesiones"

@@ -11,6 +11,9 @@ import com.reskitow.serverbus.Model.Ruta;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que gestiona la BD interna.
+ */
 public class BDRutasSQLite extends SQLiteOpenHelper {
 
     private Context context;
@@ -28,6 +31,11 @@ public class BDRutasSQLite extends SQLiteOpenHelper {
         this.context = context;
     }
 
+    /**
+     * Método en el cual se crea la tabla para poder trabajar posteriormente con ella.
+     *
+     * @param db bd en la cual se ejecutaran las consultas.
+     */
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLA_RUTAS + " (" + KEY_IDSESION_RUTAS + " TEXT, "
@@ -41,6 +49,13 @@ public class BDRutasSQLite extends SQLiteOpenHelper {
         //
     }
 
+    /**
+     * Añade a la BD interna la lista de rutas que le llega por parámetro.
+     * Al añadir nuevos registros, elimina los registros antiguos que contienen
+     * la matrícula de una de las rutas.
+     *
+     * @param rutas Rutas a añadir.
+     */
     public void anadirRutas(List<Ruta> rutas) {
         if (!rutas.isEmpty()) {
             SQLiteDatabase db = this.getWritableDatabase();
@@ -53,10 +68,22 @@ public class BDRutasSQLite extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * Elimina los registros de la BD con la matricula que le llega.
+     *
+     * @param matricula Matrícula que contendrán los registros que serán eliminados.
+     * @param db        BD sobre la que se trabajará.
+     */
     private void eliminarRegistrosTempPorMatricula(String matricula, SQLiteDatabase db) {
         db.delete(TABLA_RUTAS, KEY_MATRICULA_RUTAS + " = ?", new String[]{matricula});
     }
 
+    /**
+     * Crea el ContentValues para con la ruta que le llega.
+     *
+     * @param ruta Ruta de la cual se cogerán los valores.
+     * @return ContentValues creado.
+     */
     private ContentValues prepararContentValuesRuta(Ruta ruta) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_IDSESION_RUTAS, ruta.getIdSesion());
@@ -67,6 +94,13 @@ public class BDRutasSQLite extends SQLiteOpenHelper {
         return contentValues;
     }
 
+    /**
+     * Devuelve una lista con los registros que contienen el idSesion que le llega por parámetro ordenado
+     * por fecha.
+     *
+     * @param idSesion ID de sesión por el cual serán filtrados.
+     * @return Lista con los registros.
+     */
     public List<Ruta> obtenerRutasPorIdSesion(String idSesion) {
         List<Ruta> rutas = new ArrayList<>();
         String query = "SELECT * FROM " + TABLA_RUTAS + " WHERE " + KEY_IDSESION_RUTAS + " = ? ORDER BY " + KEY_FECHA_RUTAS;
@@ -77,9 +111,16 @@ public class BDRutasSQLite extends SQLiteOpenHelper {
                 rutas.add(obtenerRutaPorCursor(cursor));
             } while (cursor.moveToNext());
         }
+        db.close();
         return rutas;
     }
 
+    /**
+     * Obtiene las posibles rutas de una matrícula.
+     *
+     * @param matricula Matrícula de la cual se obtendrán las posibles rutas.
+     * @return Lista de registros.
+     */
     public List<Ruta> obtenerSesionesDistinct(String matricula) {
         List<Ruta> rutas = new ArrayList<>();
         String query = "SELECT * FROM " + TABLA_RUTAS + " WHERE " + KEY_MATRICULA_RUTAS + " = ? GROUP BY " + KEY_IDSESION_RUTAS + " ORDER BY " + KEY_FECHA_RUTAS;
@@ -90,9 +131,16 @@ public class BDRutasSQLite extends SQLiteOpenHelper {
                 rutas.add(obtenerRutaPorCursor(cursor));
             } while (cursor.moveToNext());
         }
+        db.close();
         return rutas;
     }
 
+    /**
+     * Crea y devuelve una nueva ruta con el cursor que le llega por parámetro.
+     *
+     * @param cursor Cursor del cual se obtendrán los valores.
+     * @return Ruta creada.
+     */
     private Ruta obtenerRutaPorCursor(Cursor cursor) {
         return new Ruta(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getDouble(3), cursor.getDouble(4));
     }

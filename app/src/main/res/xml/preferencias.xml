@@ -8,6 +8,12 @@
             android:key="@string/key_ip_servidor"
             android:summary="@string/descripcion_ip_servidor"
             android:title="@string/titulo_ip_servidor" />
+        <EditTextPreference
+            android:inputType="phone"
+            android:hint="@string/hint_puerto"
+            android:key="@string/key_puerto_servidor"
+            android:title="@string/tituli_puerto_servidor"
+            android:summary="@string/descripcion_puerto_servidor"/>
     </PreferenceCategory>
     <PreferenceCategory
         android:persistent="false"

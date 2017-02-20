@@ -3,25 +3,30 @@
     <string name="menu_ajustes">Ajustes</string>
     <string name="preferencias_titulo_servidor">Configuración del servidor</string>
     <string name="key_ip_servidor" translatable="false">prefs_ip_servidor</string>
-    <string name="descripcion_ip_servidor">Introduce la ip del servidor Rest.</string>
+    <string name="descripcion_ip_servidor">Introduce la IP del servidor Rest.</string>
     <string name="titulo_ip_servidor">IP Servidor REST</string>
     <string name="preferencias_acerca_de">Acerca de</string>
     <string name="descripcion_acerca_de">Diseño y código por Joan Creus Martin.</string>
     <string name="titulo_acerca_de">Información</string>
     <string name="hint_ip">Ej. 192.168.1.12</string>
     <string name="activity_configuracion_nombre">Configuración</string>
-    <string name="title_activity_maps">Mapa autobuses</string>
+    <string name="title_activity_maps">ServerBus</string>
     <string name="info_ultima_localizacion">Última localización</string>
     <string name="menu_refrescar">Refrescar</string>
     <string name="toast_no_hay_resultados">No hay resultados.</string>
     <string name="info_graciosa_sincronizar">Espera que termine de sincronizar, no intentes colapsar la app, no lo conseguirás. :)</string>
     <string name="matricula">Matricula</string>
-    <string name="title_activity_maps_por_matricula">Map</string>
+    <string name="title_activity_maps_por_matricula">Rutas por ID</string>
     <string name="ultima_sinc">ultima_sync_</string>
     <string name="primera_opcion_spinner">Selecciona un ID de sesión</string>
-    <string name="info_txt_cargando_ultimas_posiciones">Cargando ultimas posiciones...</string>
-    <string name="txt_info_obteniendo_por_matricula">Obteniendo sesiones por matricula...</string>
+    <string name="info_txt_cargando_ultimas_posiciones">Cargando últimas posiciones...</string>
+    <string name="txt_info_obteniendo_por_matricula">Obteniendo sesiones por matrícula...</string>
     <string name="info_toast_ver_sesiones">"Pulsa otra vez para ver todas las rutas de "</string>
     <string name="ultima_sinc_toast_info">"Última sincronización: "</string>
     <string name="ultima_sinc_toast_info2">\nPulsa el botón refrescar para actualizar los datos.</string>
+    <string name="error_rest">Ha ocurrido un error con el servidor Rest\nAsegurate que está bien configurado.</string>
+    <string name="hint_puerto">Ej. 8080</string>
+    <string name="key_puerto_servidor">prefs_puerto_servidor</string>
+    <string name="tituli_puerto_servidor">Puerto del servidor</string>
+    <string name="descripcion_puerto_servidor">Puerto por el cual se conectara al servidor (Por defecto 8080).</string>
 </resources>
