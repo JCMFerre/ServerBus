@@ -17,4 +17,11 @@
     <string name="info_graciosa_sincronizar">Espera que termine de sincronizar, no intentes colapsar la app, no lo conseguirás. :)</string>
     <string name="matricula">Matricula</string>
     <string name="title_activity_maps_por_matricula">Map</string>
+    <string name="ultima_sinc">ultima_sync_</string>
+    <string name="primera_opcion_spinner">Selecciona un ID de sesión</string>
+    <string name="info_txt_cargando_ultimas_posiciones">Cargando ultimas posiciones...</string>
+    <string name="txt_info_obteniendo_por_matricula">Obteniendo sesiones por matricula...</string>
+    <string name="info_toast_ver_sesiones">"Pulsa otra vez para ver todas las rutas de "</string>
+    <string name="ultima_sinc_toast_info">"Última sincronización: "</string>
+    <string name="ultima_sinc_toast_info2">\nPulsa el botón refrescar para actualizar los datos.</string>
 </resources>

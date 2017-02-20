@@ -158,7 +158,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             startActivity(i);
         } else {
             markerUltimoPulsado = marker;
-            Toast.makeText(this, "Pulsa otra vez para ver todas las rutas de " + marker.getTitle() + ".", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.info_toast_ver_sesiones) + marker.getTitle() + ".", Toast.LENGTH_SHORT).show();
         }
         return false;
     }
